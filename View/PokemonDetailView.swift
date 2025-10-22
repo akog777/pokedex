@@ -1,25 +1,25 @@
 import SwiftUI
 
 struct PokemonDetailView: View {
-    @Environment(\.presentationMode) var presentationMode // Para o botão de voltar
-    @EnvironmentObject var viewModel: PokemonViewModel // Recebe o ViewModel
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewModel: PokemonViewModel
     let pokemon: PokemonDetail
     
+    // O @State agora só precisa ir de 0 (About) a 1 (Stats)
     @State private var selectedTab = 0
     
     var body: some View {
         ScrollView {
             VStack {
-                // --- Cabeçalho com Imagem ---
+                // --- Cabeçalho com Imagem (Sem alterações) ---
                 ZStack(alignment: .bottom) {
                     Rectangle()
                         .fill(pokemon.primaryTypeColor)
                         .frame(height: 300)
                         .ignoresSafeArea()
                     
-                    // --- (NOVO) Botões de Voltar e Favorito ---
+                    // Botões de Voltar e Favorito (Sem alterações)
                     HStack {
-                        // Botão Voltar
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
@@ -35,7 +35,6 @@ struct PokemonDetailView: View {
                         
                         Spacer()
                         
-                        // Botão Favorito
                         Button {
                             viewModel.toggleFavorite(pokemon: pokemon)
                         } label: {
@@ -49,21 +48,61 @@ struct PokemonDetailView: View {
                         }
                         .padding(.trailing)
                     }
-                    .padding(.top, 50) // Ajuste para a safe area
+                    .padding(.top, 50)
                     .frame(maxHeight: .infinity, alignment: .top)
-                    // --- Fim dos Botões ---
-
                     
-                    AsyncImage(url: URL(string: pokemon.sprites.officialArtwork)) {
-                        // ... (código da imagem sem alteração) ...
+                    // Imagem (Sem alterações)
+                    AsyncImage(url: URL(string: pokemon.sprites.officialArtwork)) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200)
+                    } placeholder: {
+                        ProgressView()
+                            .frame(width: 200, height: 200)
                     }
                     .padding(.bottom, 20)
                 }
                 
                 // --- Informações (Card Branco) ---
                 VStack(spacing: 16) {
-                    // ... (Restante do card: Nome, Tipos, Picker, Abas) ...
-                    // ... (Nenhuma alteração aqui) ...
+                    // Nome e Tipos (Sem alterações)
+                    Text(pokemon.name.capitalized)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    HStack {
+                        ForEach(pokemon.types, id: \.slot) { typeEntry in
+                            Text(typeEntry.type.name.capitalized)
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 8)
+                                .background(TypeEnum(rawValue: typeEntry.type.name)?.color ?? .gray)
+                                .cornerRadius(20)
+                        }
+                    }
+                    
+                    // --- MODIFICAÇÃO AQUI ---
+                    // Picker (Abas) - Removida a tag "Evolution"
+                    Picker("Details", selection: $selectedTab) {
+                        Text("About").tag(0)
+                        Text("Stats").tag(1)
+                        // Text("Evolution").tag(2) // REMOVIDO
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(.horizontal)
+                    
+                    // --- MODIFICAÇÃO AQUI ---
+                    // Conteúdo das Abas - Removido o 'else' para Evolution
+                    if selectedTab == 0 {
+                        PokemonAboutView(pokemon: pokemon)
+                    } else { // MODIFICADO (era 'else if selectedTab == 1')
+                        PokemonStatsView(pokemon: pokemon)
+                    }
+                    // O 'else' para Evolution foi totalmente REMOVIDO
+                    
                 }
                 .padding()
                 .background(.white)
@@ -71,14 +110,11 @@ struct PokemonDetailView: View {
                 .offset(y: -50)
                 .padding(.bottom, -50)
                 
-                Spacer() // Empurra a barra de nav para baixo
+                Spacer() 
                 
-                // --- (NOVO) Barra de Navegação Inferior ---
+                // --- Barra de Navegação Inferior (Sem alterações) ---
                 Divider()
                 HStack {
-                    // Nota: Os botões aqui não farão nada,
-                    // pois estamos em uma tela "funda" na navegação.
-                    // Eles estão aqui para manter o design.
                     Image("estrela")
                         .resizable()
                         .frame(width: 60, height: 60)
@@ -97,12 +133,69 @@ struct PokemonDetailView: View {
                 .padding(.horizontal, 30)
                 .padding(.top, 5)
                 .frame(height: 80)
-                // --- Fim da Barra ---
                 
             }
         }
         .navigationTitle("")
-        .navigationBarHidden(true) // Continua escondida
-        .edgesIgnoringSafeArea(.top) // Ignora o topo
+        .navigationBarHidden(true)
+        .edgesIgnoringSafeArea(.top)
+    }
+}
+
+// --- Sub-views para as Abas (Sem alterações) ---
+// O alinhamento já estava correto aqui, usando VStack(alignment: .leading)
+// e .frame(maxWidth: .infinity, alignment: .leading)
+
+struct PokemonAboutView: View {
+    let pokemon: PokemonDetail
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Pokédex Data")
+                .font(.title2)
+                .fontWeight(.bold)
+            
+            HStack {
+                Text("Height")
+                    .frame(width: 80, alignment: .leading)
+                    .foregroundColor(.gray)
+                Text("\(Double(pokemon.height) / 10.0, specifier: "%.1f") m")
+            }
+            HStack {
+                Text("Weight")
+                    .frame(width: 80, alignment: .leading)
+                    .foregroundColor(.gray)
+                Text("\(Double(pokemon.weight) / 10.0, specifier: "%.1f") kg")
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading) // Garante o alinhamento à esquerda
+    }
+}
+
+struct PokemonStatsView: View {
+    let pokemon: PokemonDetail
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Base Stats")
+                .font(.title2)
+                .fontWeight(.bold)
+            
+            ForEach(pokemon.stats, id: \.stat.name) { statEntry in
+                HStack {
+                    Text(statEntry.stat.name.capitalized)
+                        .frame(width: 80, alignment: .leading)
+                        .foregroundColor(.gray)
+                    Text("\(statEntry.baseStat)")
+                        .frame(width: 35)
+                    
+                    ProgressView(value: Double(statEntry.baseStat), total: 200)
+                        .tint(statEntry.baseStat > 50 ? .green : .red)
+                }
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading) // Garante o alinhamento à esquerda
     }
 }
