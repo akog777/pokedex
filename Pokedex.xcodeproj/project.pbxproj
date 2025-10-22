@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		558BCD582EA6AEF200EFF9D8 /* ApiPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558BCD572EA6AEF200EFF9D8 /* ApiPokemon.swift */; };
+		558BCD5B2EA6B08700EFF9D8 /* apiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558BCD5A2EA6B08700EFF9D8 /* apiError.swift */; };
+		558BCD5E2EA6B1D400EFF9D8 /* PokemonResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558BCD5D2EA6B1D400EFF9D8 /* PokemonResults.swift */; };
+		558BCD602EA6B60B00EFF9D8 /* TypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558BCD5F2EA6B60B00EFF9D8 /* TypeEnum.swift */; };
+		55AC7D2F2EA175E70077E574 /* Pokebola_GabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7D2E2EA175E70077E574 /* Pokebola_GabApp.swift */; };
+		55AC7D312EA175E70077E574 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7D302EA175E70077E574 /* ContentView.swift */; };
+		55AC7D332EA175ED0077E574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AC7D322EA175ED0077E574 /* Assets.xcassets */; };
+		55AC7D372EA175ED0077E574 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AC7D362EA175ED0077E574 /* Preview Assets.xcassets */; };
+		55E87E032EA7FD3B00063867 /* BuscaPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E87E022EA7FD3B00063867 /* BuscaPokemon.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		558BCD572EA6AEF200EFF9D8 /* ApiPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPokemon.swift; sourceTree = "<group>"; };
+		558BCD5A2EA6B08700EFF9D8 /* apiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiError.swift; sourceTree = "<group>"; };
+		558BCD5D2EA6B1D400EFF9D8 /* PokemonResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonResults.swift; sourceTree = "<group>"; };
+		558BCD5F2EA6B60B00EFF9D8 /* TypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEnum.swift; sourceTree = "<group>"; };
+		55AC7D2B2EA175E70077E574 /* Pokebola Gab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokebola Gab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55AC7D2E2EA175E70077E574 /* Pokebola_GabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokebola_GabApp.swift; sourceTree = "<group>"; };
+		55AC7D302EA175E70077E574 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55AC7D322EA175ED0077E574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55AC7D342EA175ED0077E574 /* Pokebola_Gab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pokebola_Gab.entitlements; sourceTree = "<group>"; };
+		55AC7D362EA175ED0077E574 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55E87E022EA7FD3B00063867 /* BuscaPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscaPokemon.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55AC7D282EA175E70077E574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		558BCD592EA6B06A00EFF9D8 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				558BCD572EA6AEF200EFF9D8 /* ApiPokemon.swift */,
+				558BCD5A2EA6B08700EFF9D8 /* apiError.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		558BCD5C2EA6B1BD00EFF9D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				558BCD5D2EA6B1D400EFF9D8 /* PokemonResults.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55AC7D222EA175E70077E574 = {
+			isa = PBXGroup;
+			children = (
+				55AC7D2D2EA175E70077E574 /* Pokebola Gab */,
+				55AC7D2C2EA175E70077E574 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55AC7D2C2EA175E70077E574 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55AC7D2B2EA175E70077E574 /* Pokebola Gab.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55AC7D2D2EA175E70077E574 /* Pokebola Gab */ = {
+			isa = PBXGroup;
+			children = (
+				55AC7D2E2EA175E70077E574 /* Pokebola_GabApp.swift */,
+				558BCD592EA6B06A00EFF9D8 /* api */,
+				558BCD5C2EA6B1BD00EFF9D8 /* Model */,
+				558BCD5F2EA6B60B00EFF9D8 /* TypeEnum.swift */,
+				55E87DFF2EA7F89F00063867 /* View */,
+				55AC7D322EA175ED0077E574 /* Assets.xcassets */,
+				55AC7D342EA175ED0077E574 /* Pokebola_Gab.entitlements */,
+				55AC7D352EA175ED0077E574 /* Preview Content */,
+			);
+			path = "Pokebola Gab";
+			sourceTree = "<group>";
+		};
+		55AC7D352EA175ED0077E574 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				55AC7D362EA175ED0077E574 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		55E87DFF2EA7F89F00063867 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55AC7D302EA175E70077E574 /* ContentView.swift */,
+				55E87E022EA7FD3B00063867 /* BuscaPokemon.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55AC7D2A2EA175E70077E574 /* Pokebola Gab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55AC7D3A2EA175ED0077E574 /* Build configuration list for PBXNativeTarget "Pokebola Gab" */;
+			buildPhases = (
+				55AC7D272EA175E70077E574 /* Sources */,
+				55AC7D282EA175E70077E574 /* Frameworks */,
+				55AC7D292EA175E70077E574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pokebola Gab";
+			productName = "Pokebola Gab";
+			productReference = 55AC7D2B2EA175E70077E574 /* Pokebola Gab.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55AC7D232EA175E70077E574 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					55AC7D2A2EA175E70077E574 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 55AC7D262EA175E70077E574 /* Build configuration list for PBXProject "Pokebola Gab" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55AC7D222EA175E70077E574;
+			productRefGroup = 55AC7D2C2EA175E70077E574 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55AC7D2A2EA175E70077E574 /* Pokebola Gab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55AC7D292EA175E70077E574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55AC7D372EA175ED0077E574 /* Preview Assets.xcassets in Resources */,
+				55AC7D332EA175ED0077E574 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55AC7D272EA175E70077E574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				558BCD5E2EA6B1D400EFF9D8 /* PokemonResults.swift in Sources */,
+				558BCD582EA6AEF200EFF9D8 /* ApiPokemon.swift in Sources */,
+				55E87E032EA7FD3B00063867 /* BuscaPokemon.swift in Sources */,
+				558BCD602EA6B60B00EFF9D8 /* TypeEnum.swift in Sources */,
+				558BCD5B2EA6B08700EFF9D8 /* apiError.swift in Sources */,
+				55AC7D312EA175E70077E574 /* ContentView.swift in Sources */,
+				55AC7D2F2EA175E70077E574 /* Pokebola_GabApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		55AC7D382EA175ED0077E574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55AC7D392EA175ED0077E574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		55AC7D3B2EA175ED0077E574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Pokebola Gab/Pokebola_Gab.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pokebola Gab/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "HeitorOliveira.Pokebola-Gab";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55AC7D3C2EA175ED0077E574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Pokebola Gab/Pokebola_Gab.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Pokebola Gab/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "HeitorOliveira.Pokebola-Gab";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55AC7D262EA175E70077E574 /* Build configuration list for PBXProject "Pokebola Gab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55AC7D382EA175ED0077E574 /* Debug */,
+				55AC7D392EA175ED0077E574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55AC7D3A2EA175ED0077E574 /* Build configuration list for PBXNativeTarget "Pokebola Gab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55AC7D3B2EA175ED0077E574 /* Debug */,
+				55AC7D3C2EA175ED0077E574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55AC7D232EA175E70077E574 /* Project object */;
+}
