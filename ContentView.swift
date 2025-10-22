@@ -2,10 +2,11 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    // 1. Cria uma instância do ViewModel
+    // 1. Cria uma instância do ViewModel com @StateObject
     @StateObject private var viewModel = PokemonViewModel()
     
     var body: some View {
+        // Usa NavigationStack como na Aula 03
         NavigationStack {
             VStack(spacing: 0) {
                 // --- Cabeçalho ---
@@ -33,31 +34,27 @@ struct ContentView: View {
                         .padding()
                         .frame(maxHeight: .infinity)
                 } else {
-                    ScrollView {
-                        LazyVStack(spacing: 12) {
-                            ForEach(viewModel.pokemonList) { pokemon in
-                                // 2. Navega para a DetailView com o Pokémon
-                                NavigationLink(destination: PokemonDetailView(pokemon: pokemon)) {
-                                    PokemonRowView(pokemon: pokemon)
-                                }
-                                .buttonStyle(.plain) // Remove a cor azul do link
-                            }
+                    // Usa List e ForEach, como na Aula 03
+                    List(viewModel.pokemonList) { pokemon in
+                        // 2. NavigationLink para a DetailView
+                        NavigationLink(destination: PokemonDetailView(pokemon: pokemon)) {
+                            PokemonRowView(pokemon: pokemon)
                         }
+                        .listRowInsets(EdgeInsets()) // Remove padding da linha
+                        .listRowSeparator(.hidden) // Remove divisor
                         .padding(.horizontal)
+                        .padding(.vertical, 6)
                     }
+                    .listStyle(.plain) // Remove o estilo da lista
                 }
                 
                 Divider()
                 
                 // --- Barra de Navegação Inferior ---
                 HStack {
-                    Button {
-                        // Ação Estrela (Favoritos)
-                    } label: {
-                        Image("estrela")
-                            .resizable()
-                            .frame(width: 60, height: 60)
-                    }
+                    Image("estrela")
+                        .resizable()
+                        .frame(width: 60, height: 60)
                     
                     Spacer()
                     
@@ -67,8 +64,8 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    // 3. Passa o ViewModel para a tela de Busca
-                    NavigationLink(destination: BuscaPokemon().environmentObject(viewModel)) {
+                    // Link para a sua tela de Busca
+                    NavigationLink(destination: BuscaPokemon()) {
                         Image("lupa")
                             .resizable()
                             .frame(width: 65, height: 65)
@@ -80,14 +77,10 @@ struct ContentView: View {
             }
             .navigationTitle("")
             .navigationBarHidden(true)
-            .task {
-                // 4. Chama a função para buscar os dados quando a View aparecer
-                await viewModel.fetchAllPokemon()
+            .onAppear { // Usa .onAppear, como na Aula 03
+                // 3. Chama a função para buscar os dados
+                viewModel.fetchAllPokemon()
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

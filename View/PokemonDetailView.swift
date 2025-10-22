@@ -1,10 +1,10 @@
 import SwiftUI
 
-// Tela de detalhes do Pokémon
+// Tela de detalhes do Pokémon (Focando na aba "About" e "Stats")
 struct PokemonDetailView: View {
     let pokemon: PokemonDetail
     
-    // 0 = About, 1 = Stats, 2 = Evolution
+    // @State para controlar o Picker (Segmented Control)
     @State private var selectedTab = 0
     
     var body: some View {
@@ -12,14 +12,12 @@ struct PokemonDetailView: View {
             VStack {
                 // --- Cabeçalho com Imagem ---
                 ZStack(alignment: .bottom) {
-                    // Fundo colorido
                     Rectangle()
                         .fill(pokemon.primaryTypeColor)
                         .frame(height: 300)
                         .ignoresSafeArea()
                     
-                    // Imagem
-                    AsyncImage(url: URL(string: pokemon.sprites.frontDefault)) { image in
+                    AsyncImage(url: URL(string: pokemon.sprites.officialArtwork)) { image in
                         image
                             .resizable()
                             .scaledToFit()
@@ -32,8 +30,7 @@ struct PokemonDetailView: View {
                 }
                 
                 // --- Informações (Card Branco) ---
-                VStack {
-                    // Nomes e Tipos
+                VStack(spacing: 16) {
                     Text(pokemon.name.capitalized)
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -50,7 +47,6 @@ struct PokemonDetailView: View {
                                 .cornerRadius(20)
                         }
                     }
-                    .padding(.bottom)
                     
                     // Picker (Abas)
                     Picker("Details", selection: $selectedTab) {
@@ -62,23 +58,20 @@ struct PokemonDetailView: View {
                     .padding(.horizontal)
                     
                     // Conteúdo das Abas
-                    VStack(alignment: .leading, spacing: 15) {
-                        if selectedTab == 0 {
-                            PokemonAboutView(pokemon: pokemon)
-                        } else if selectedTab == 1 {
-                            PokemonStatsView(pokemon: pokemon)
-                        } else {
-                            Text("Informações de evolução indisponíveis.")
-                                .padding()
-                        }
+                    if selectedTab == 0 {
+                        PokemonAboutView(pokemon: pokemon)
+                    } else if selectedTab == 1 {
+                        PokemonStatsView(pokemon: pokemon)
+                    } else {
+                        Text("Evolução (placeholder)")
+                            .padding()
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
                 }
                 .padding()
                 .background(.white)
                 .cornerRadius(30)
-                .offset(y: -50) // Sobe o card para sobrepor
+                .offset(y: -50) // Sobe o card
+                .padding(.bottom, -50) // Remove espaço extra
             }
         }
         .navigationTitle("")
@@ -101,16 +94,17 @@ struct PokemonAboutView: View {
                 Text("Height")
                     .frame(width: 80, alignment: .leading)
                     .foregroundColor(.gray)
-                Text(pokemon.formattedHeight)
+                Text("\(Double(pokemon.height) / 10.0, specifier: "%.1f") m")
             }
             HStack {
                 Text("Weight")
                     .frame(width: 80, alignment: .leading)
                     .foregroundColor(.gray)
-                Text(pokemon.formattedWeight)
+                Text("\(Double(pokemon.weight) / 10.0, specifier: "%.1f") kg")
             }
         }
         .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -131,12 +125,13 @@ struct PokemonStatsView: View {
                     Text("\(statEntry.baseStat)")
                         .frame(width: 35)
                     
-                    // Barra de progresso para o stat
-                    ProgressView(value: Double(statEntry.baseStat), total: 200) // 200 é um total razoável
+                    // Barra de progresso (ProgressView)
+                    ProgressView(value: Double(statEntry.baseStat), total: 200)
                         .tint(statEntry.baseStat > 50 ? .green : .red)
                 }
             }
         }
         .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

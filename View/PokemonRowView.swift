@@ -35,15 +35,20 @@ struct PokemonRowView: View {
             
             Spacer()
             
-            // Imagem do Pokémon
-            AsyncImage(url: URL(string: pokemon.sprites.frontDefault)) { image in
+            // Imagem do Pokémon (Usando AsyncImage nativo do SwiftUI)
+            AsyncImage(url: URL(string: pokemon.sprites.officialArtwork)) { image in
                 image
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
             } placeholder: {
-                ProgressView()
-                    .frame(width: 100, height: 100)
+                // Coloca a pokebola como placeholder
+                Image("pokebola")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60, height: 60)
+                    .opacity(0.3)
+                    .padding()
             }
         }
         .padding(16)
